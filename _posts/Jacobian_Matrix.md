@@ -139,31 +139,59 @@ In Python, the Jacobian matrix can be computed either manually or using librarie
 
 ### Manual Computation of Jacobian
 
-Here’s an example where we manually compute the Jacobian for a function $(\mathbf{f}(x_1, x_2))$:
+# Approximating the Jacobian Matrix Using Finite Differences
+
+When the derivatives of the function are not available or are too complex to derive manually, we can approximate the Jacobian matrix using **finite differences**. The finite difference method approximates derivatives by using small perturbations around the input values.
+
+## Finite Difference Formula
+
+For each element $(x_j)$ of the input vector $(\mathbf{x})$, the partial derivative of $(f_i)$ with respect to $(x_j)$ can be approximated as:
+
+$$
+\frac{\partial f_i}{\partial x_j} \approx \frac{f_i(x_1, \dots, x_j + h, \dots, x_n) - f_i(x_1, \dots, x_j, \dots, x_n)}{h}
+$$
+
+Where $(h)$ is a small perturbation.
 
 ```python
 import numpy as np
 
-def jacobian(x):
-    """Compute the Jacobian matrix for a function f(x1, x2)."""
-    x1, x2 = x[0], x[1]
-    # Derivatives of f1 = x1^2 + x2
-    df1_dx1 = 2 * x1
-    df1_dx2 = 1
+def jacobian_finite_diff(f, x, h=1e-5):
+    """
+    Compute the Jacobian matrix of function f at x using finite differences.
     
-    # Derivatives of f2 = sin(x1) + x2^2
-    df2_dx1 = np.cos(x1)
-    df2_dx2 = 2 * x2
-
-    # Jacobian matrix
-    J = np.array([[df1_dx1, df1_dx2],
-                  [df2_dx1, df2_dx2]])
+    Parameters:
+        f (function): Function that takes a vector x and returns a vector.
+        x (numpy array): Input point where Jacobian is evaluated.
+        h (float): Step size for finite differences.
+    
+    Returns:
+        J (numpy array): Jacobian matrix.
+    """
+    n = len(x)  # Number of input variables
+    m = len(f(x))  # Number of output variables
+    J = np.zeros((m, n))
+    
+    for i in range(n):
+        x_step = np.copy(x)
+        x_step[i] += h  # Increment the i-th variable by a small value h
+        f_step = f(x_step)
+        f_orig = f(x)
+        J[:, i] = (f_step - f_orig) / h  # Approximate the derivative
+    
     return J
+
+# Example function to test: f(x1, x2) = [x1^2 + x2, sin(x1) + x2^2]
+def func(x):
+    x1, x2 = x[0], x[1]
+    return np.array([x1**2 + x2, np.sin(x1) + x2**2])
 
 # Example usage
 x = np.array([1.0, 2.0])
-print(jacobian(x))
+J_finite_diff = jacobian_finite_diff(func, x)
+print("Jacobian matrix computed using finite differences:")
+print(J_finite_diff)
 ```
 
-Conclusion
+### Conclusion
 The Jacobian matrix is a powerful tool for analyzing how changes in input variables affect the outputs of a system of equations. It is widely used in optimization, machine learning, control theory, and numerical methods for solving differential equations. Understanding the Jacobian provides valuable insights into the local behavior of functions and helps in solving complex problems efficiently.
