@@ -5,7 +5,14 @@ baseurl: "" # Don't change this
 url: "https://ph7klw76.github.io/my-blog"
 
 theme: jekyll-theme-cayman
+
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
 
 plugins:
   - jekyll-feed
+
+mathjax: true
+
