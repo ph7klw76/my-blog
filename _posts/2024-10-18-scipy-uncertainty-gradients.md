@@ -47,6 +47,10 @@ While SciPy makes nonlinear curve fitting easier, it is still essential for stud
 
 Moreover, understanding how uncertainties propagate through a model is a fundamental skill in scientific data analysis. While SciPy calculates uncertainties automatically, students must understand how these uncertainties are derived and how they relate to the Jacobian matrix. The covariance matrix is derived from the Jacobian matrix, which describes how sensitive the model output is to changes in each parameter. The equation:
 
+$$
+\Sigma_\theta = \sigma^2 (J^T J)^{-1}
+$$
+
 
 highlights the relationship between parameter uncertainties and the sensitivity of the model. Without understanding the role of the Jacobian matrix and how errors propagate through a model, students may not fully appreciate the reliability of the fitted parameters or the limitations of the fitting process.
 
