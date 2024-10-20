@@ -12,13 +12,13 @@ Historically, students were taught to extract parameters from linear models usin
 However, many real-world phenomena in physics and engineering are described by nonlinear equations, making parameter extraction much more complex. A common practice to address this issue was to linearize the nonlinear equations. For example, the exponential growth equation:
 
 $$ 
-y = A \cdot e^{Bx} 
+\Large y = A \cdot e^{Bx} 
 $$
 
 can be linearized by taking the natural logarithm of both sides, resulting in:
 
 $$
-\ln(y) = \ln(A) + Bx
+\Large \ln(y) = \ln(A) + Bx
 $$
 
 which is a linear equation in \( \ln(A) \) and \( B \). This approach allowed students to apply linear regression techniques to extract the parameters. However, linearization has significant drawbacks, including the difficulty of propagating uncertainties correctly through the transformation, as well as challenges in interpreting the transformed parameters back in their original nonlinear context. Furthermore, linearization becomes unwieldy for more complex models involving multiple parameters or intricate functional forms.
@@ -48,7 +48,7 @@ While SciPy makes nonlinear curve fitting easier, it is still essential for stud
 Moreover, understanding how uncertainties propagate through a model is a fundamental skill in scientific data analysis. While SciPy calculates uncertainties automatically, students must understand how these uncertainties are derived and how they relate to the Jacobian matrix. The covariance matrix is derived from the Jacobian matrix, which describes how sensitive the model output is to changes in each parameter. The equation:
 
 $$
-\Sigma_\theta = \sigma^2 (J^T J)^{-1}
+\Large \Sigma_\theta = \sigma^2 (J^T J)^{-1}
 $$
 
 
