@@ -7,9 +7,10 @@ categories: science python
 
 In physical sciences and engineering, undergraduate students frequently encounter problems that require them to extract meaningful parameters from experimental data. This process often involves calculating gradients and uncertainties, which are critical for understanding how small changes in input variables affect the results and for quantifying the confidence in these results. Traditionally, this task involved using tools like Excel, especially for fitting linear models, where the relationship between variables is straightforward. However, this process becomes considerably more difficult when the equation is nonlinear and involves estimating multiple parameters simultaneously.
 
-Historically, students were taught to extract parameters from linear models using simple methods like linear regression. For example, a basic linear equation such as \( y = mx + c \) could be handled using Excel’s built-in functions to calculate the line of best fit and estimate the slope \( m \) and intercept \( c \), along with their associated uncertainties. This process was relatively straightforward because the equation was linear, and the least squares fitting method, which was used by Excel and similar tools, was well-suited for these types of problems.
+With modern tools like SciPy, many of these difficulties are abstracted, making nonlinear fitting more accessible. SciPy provides advanced fitting methods, allowing students to perform both linear and nonlinear regression with ease, including obtaining uncertainties in parameter estimates. Nevertheless, it is crucial for students to first understand the fundamental principles behind parameter extraction before relying on automated tools like SciPy. This understanding enables them to correctly interpret results, extend their analysis to more complex models, and handle data critically and accurately.
 
-However, many real-world phenomena in physics and engineering are described by nonlinear equations, making parameter extraction much more complex. A common practice to address this issue was to linearize the nonlinear equations. For example, the exponential growth equation:
+The Shift from Linear to Nonlinear Models: Historical Context
+Traditionally, students were taught to extract parameters from linear models using simple methods like linear regression. For example, consider the linear equation:
 
 $$ 
 \Large y = A \cdot e^{Bx} 
