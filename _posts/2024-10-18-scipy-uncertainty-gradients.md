@@ -1,9 +1,3 @@
----
-layout: post
-title: "The Importance of Understanding Uncertainty and Gradients in Scientific Parameter Extraction: A Modern Approach with SciPy"
-date: 2024-10-18
-categories: science python
----
 
 ## The Importance of Understanding Uncertainty and Gradients in Scientific Parameter Extraction: A Modern Approach with SciPy
 
