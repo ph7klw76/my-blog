@@ -1,9 +1,3 @@
----
-layout: post
-title: " Mathematical Background of Nonlinear Least Squares Fitting"
-date: 2024-10-18
-categories: mathematics optimization
----
 
 # Nonlinear Least Squares Fitting: A Mathematical Overview
 
