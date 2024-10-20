@@ -1,0 +1,11 @@
+title: My Blog
+description: >- 
+  A blog about scientific parameter extraction using SciPy and modern methods.
+baseurl: "" # Don't change this
+url: "https://ph7klw76.github.io/my-blog"
+
+theme: jekyll-theme-cayman
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
