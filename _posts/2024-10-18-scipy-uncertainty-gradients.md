@@ -16,10 +16,11 @@ With modern tools like **SciPy**, the fitting process has been simplified, makin
 ## From Linear to Nonlinear Fitting: A Historical Challenge
 
 In the past, students would typically start with simpler, **linear equations**, where relationships between variables were straightforward. For instance, given a set of experimental data that followed a linear relationship (e.g., 
-
+$$
 \[
 y = mx + c
 \]
+$$
 
 students could use **linear regression** to extract parameters such as the slope \(m\) and the intercept \(c\). Tools like Excel provided built-in functions to calculate the **line of best fit** and its associated uncertainties.
 
