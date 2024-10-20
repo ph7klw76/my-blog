@@ -15,10 +15,7 @@ With modern tools like **SciPy**, the fitting process has been simplified, makin
 
 ## From Linear to Nonlinear Fitting: A Historical Challenge
 
-In the past, students would typically start with simpler, **linear equations**, where relationships between variables were straightforward. For instance, given a set of experimental data that followed a linear relationship (e.g., 
-$$
-y = mx + c
-$$
+In the past, students would typically start with simpler, **linear equations**, where relationships between variables were straightforward. For instance, given a set of experimental data that followed a linear relationship (e.g., y = mx + c)
 
 students could use **linear regression** to extract parameters such as the slope \(m\) and the intercept \(c\). Tools like Excel provided built-in functions to calculate the **line of best fit** and its associated uncertainties.
 
@@ -29,13 +26,13 @@ students could use **linear regression** to extract parameters such as the slope
 However, many real-world problems in physics and engineering involve **nonlinear relationships**. Take, for example, an equation describing **exponential growth**:
 
 $$ 
-y = A \cdot e^{Bx} 
+\Large y = A \cdot e^{Bx} 
 $$
 
 This equation is inherently nonlinear, making it difficult to fit using basic tools like Excel. In the past, students would often **linearize** such equations by transforming them into a linear form. For the example above, taking the natural logarithm on both sides yields:
 
 $$
-\ln(y) = \ln(A) + Bx
+\Large \ln(y) = \ln(A) + Bx
 $$
 
 This linearized version could be fitted using linear regression techniques, but the transformation often introduced additional complexities. For instance, handling **uncertainties** became more complicated, and care was required when interpreting the transformed parameters.
@@ -50,9 +47,10 @@ Today, with the advent of powerful libraries like **SciPy** in Python, the proce
 
 For example, using SciPy, the exponential growth equation
 
-\[
-y = A \cdot e^{Bx}
-\]
+$$
+\Large y = A \cdot e^{Bx}
+$$
+
 
 can be fitted to data directly by defining a model function and passing the data to `curve_fit`:
 
@@ -101,9 +99,9 @@ Understanding how uncertainties propagate through mathematical models is fundame
 
 For example, in nonlinear fitting, the uncertainty in the parameters is influenced by how sensitive the model is to each parameter, which is captured by the **Jacobian matrix**:
 
-\[
-\Sigma_\theta = \sigma^2 (J^T J)^{-1}
-\]
+$$
+\Large \Sigma_\theta = \sigma^2 (J^T J)^{-1}
+$$
 
 Students must understand that the **diagonal elements** of the covariance matrix represent the **variance** of the parameters, and the **off-diagonal elements** represent **correlations** between parameters.
 
