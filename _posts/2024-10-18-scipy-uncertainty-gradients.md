@@ -9,17 +9,17 @@ In physical sciences and engineering, undergraduate students frequently encounte
 
 Historically, students were taught to extract parameters from linear models using simple methods like linear regression. For example, a basic linear equation such as \( y = mx + c \) could be handled using Excel’s built-in functions to calculate the line of best fit and estimate the slope \( m \) and intercept \( c \), along with their associated uncertainties. This process was relatively straightforward because the equation was linear, and the least squares fitting method, which was used by Excel and similar tools, was well-suited for these types of problems.
 
-However, many real-world phenomena in physics and engineering are described by nonlinear equations, making parameter extraction much more complex. A common practice to address this issue was to linearize the nonlinear equations. For example, the exponential growth equation
+However, many real-world phenomena in physics and engineering are described by nonlinear equations, making parameter extraction much more complex. A common practice to address this issue was to linearize the nonlinear equations. For example, the exponential growth equation:
 
-\[
-y = A \cdot e^{Bx}
-\]
+$$ 
+y = A \cdot e^{Bx} 
+$$
 
-can be linearized by taking the natural logarithm of both sides, resulting in
+can be linearized by taking the natural logarithm of both sides, resulting in:
 
-\[
+$$
 \ln(y) = \ln(A) + Bx
-\]
+$$
 
 which is a linear equation in \( \ln(A) \) and \( B \). This approach allowed students to apply linear regression techniques to extract the parameters. However, linearization has significant drawbacks, including the difficulty of propagating uncertainties correctly through the transformation, as well as challenges in interpreting the transformed parameters back in their original nonlinear context. Furthermore, linearization becomes unwieldy for more complex models involving multiple parameters or intricate functional forms.
 
@@ -35,7 +35,7 @@ def model(x, A, B):
 
 # Generate synthetic data with noise
 xdata = np.linspace(0, 5, 50)
-ydata = 3.0 * np.exp(1.5 * xdata) + np.random.normal(size=xdata.size)
+ydata = 3.0 * np.exp(1.5 * xdata) + np.random.normal(size=xdata)
 
 # Use SciPy to fit the model to the data
 popt, pcov = curve_fit(model, xdata, ydata)
