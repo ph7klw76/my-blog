@@ -10,11 +10,11 @@ In this blog post, we will explore what the Jacobian matrix is, how it is comput
 
 ## Section 1: What is the Jacobian Matrix?
 
-In simple terms, the **Jacobian matrix** of a vector-valued function is a matrix of all its first-order partial derivatives. If you have a function that maps from \(\mathbb{R}^n\) to \(\mathbb{R}^m\), the Jacobian matrix describes how each output of the function changes with respect to each input variable.
+In simple terms, the **Jacobian matrix** of a vector-valued function is a matrix of all its first-order partial derivatives. If you have a function that maps from $\mathbb{R}^n\$ to $\mathbb{R}^m\$, the Jacobian matrix describes how each output of the function changes with respect to each input variable.
 
 ### Formal Definition
 
-Let’s consider a function $(\mathbf{f}(\mathbf{x}))$ that maps an \(n\)-dimensional input vector \(\mathbf{x} = [x_1, x_2, \ldots, x_n]\) to an \(m\)-dimensional output vector $(\mathbf{f} = [f_1, f_2, \ldots, f_m]\):
+Let’s consider a function $\mathbf{f}(\mathbf{x})$ that maps an $n$-dimensional input vector $\mathbf{x} = [x_1, x_2, \ldots, x_n]$ to an $(m$-dimensional output vector $\mathbf{f} = [f_1, f_2, \ldots, f_m]$):
 
 $$
 \mathbf{f}(\mathbf{x}) = 
@@ -48,7 +48,7 @@ The Jacobian matrix can be interpreted as describing the **local linear approxim
 
 ### Tangent Planes and Local Behavior
 
-In the case of functions that map from \(\mathbb{R}^n \to \mathbb{R}^m\), the Jacobian matrix provides a linear transformation that best approximates the function near a specific point. This transformation is represented by the matrix multiplication of the Jacobian with small changes in the input:
+In the case of functions that map from $\mathbb{R}^n \to \mathbb{R}^m$, the Jacobian matrix provides a linear transformation that best approximates the function near a specific point. This transformation is represented by the matrix multiplication of the Jacobian with small changes in the input:
 
 $$
 \Delta \mathbf{f} \approx J(\mathbf{x}) \Delta \mathbf{x}
@@ -76,7 +76,7 @@ $$
 
 ### Example 2: Multi-Output Function
 
-Consider a function that maps from \(\mathbb{R}^2 \to \mathbb{R}^2\):
+Consider a function that maps from $\mathbb{R}^2 \to \mathbb{R}^2$:
 
 $$
 \mathbf{f}(x_1, x_2) = 
@@ -100,7 +100,7 @@ J(\mathbf{x}) =
 \end{bmatrix}
 $$
 
-This matrix shows how small changes in \(x_1\) and \(x_2\) affect both \(f_1\) and \(f_2\).
+This matrix shows how small changes in $x_1$ and $x_2$ affect both $f_1$ and $f_2$.
 
 ---
 
@@ -110,13 +110,13 @@ The Jacobian matrix is critical in many optimization algorithms, especially thos
 
 ### Newton’s Method
 
-In Newton's method for optimization, the Jacobian is used to iteratively refine estimates of the solution to a system of non-linear equations. Given a system of equations $(\mathbf{f}(\mathbf{x}) = \mathbf{0})$, Newton's method updates the guess for $(\mathbf{x})$ using:
+In Newton's method for optimization, the Jacobian is used to iteratively refine estimates of the solution to a system of non-linear equations. Given a system of equations $\mathbf{f}(\mathbf{x}) = \mathbf{0}$, Newton's method updates the guess for $\mathbf{x}$ using:
 
-$$
-\mathbf{x}_{new} = \mathbf{x}_{old} - J(\mathbf{x})^{-1} \mathbf{f}(\mathbf{x})
-$$
+$\mathbf{x}_{new} = $ 
 
-Here, $(J(\mathbf{x}))$ is the Jacobian matrix of the system of equations. The Jacobian helps to approximate the non-linear system by a linear one in the vicinity of the current estimate.
+$\mathbf{x}_{old} - J(\mathbf{x})^{-1} \mathbf{f}(\mathbf{x})\$
+
+Here, $J(\mathbf{x})$ is the Jacobian matrix of the system of equations. The Jacobian helps to approximate the non-linear system by a linear one in the vicinity of the current estimate.
 
 ### Levenberg-Marquardt Algorithm
 
@@ -128,8 +128,8 @@ $$
 
 Where:
 
-- \(J\) is the Jacobian matrix of partial derivatives of the residuals with respect to the parameters $(\beta)$,
-- $(r)$ is the residual vector.
+- $J$ is the Jacobian matrix of partial derivatives of the residuals with respect to the parameters $(\beta)$,
+- $r$ is the residual vector.
 
 ---
 
